@@ -1,0 +1,139 @@
+Inicio
+
+Definir escuela, tipoMaterial,puntosMaterial como entero
+Definir tipoEscuela como entero
+Definir cantMaterial como real
+Definir contPlastico,contPapel, contVidrio,contAluminio como real
+Definir cantTotalMaterial como real
+Definir puntosTotalPlastico,puntosTotalPapel,puntosTotalVidrio,puntosTotalAluminio, puntosTotales como real
+Definir opcion como caracter
+
+tipoEscuela=0
+cantMaterial=0
+contPlastico=0
+contPapel=0
+contVidrio=0
+contAluminio=0
+cantTotalMaterial=0
+puntosTotalPlastico=0
+puntosTotalPapel=0
+puntosTotalVidrio=0
+puntosTotales=0
+	
+	
+Escribir("Esta es la lista de escuelas que pertenecen al Distrito SAN JOSE")
+Escribir("Por favor escoga el numero correspondiente a la escuela que desea ingresar:")
+	Minetras(verdadero)
+		Escribir("1. Escuela Marcelino Garcia Flamenco")
+		Escribir("2. Escuela Republica de Nicaragua\n")
+		Escribir("3. Escuela Omar Dengo")
+		Escribir("4. Escuela Carolina Dent")
+	
+		Escribir("Escuela: ")
+		leer(escuela);
+		si (escuela == 1 || escuela == 2 || escuela == 3 || escuela == 4)
+			break;
+		entonces Escribir("***Escuela no encontrada, por favor digite una escuela validan")
+		
+	
+	Hacer Mientras(verdadero)
+		Escribir("Por favor escoga el tipo de material que va a reciclar:")
+		Escribir("1. PLASTICO")
+		Escribir("2. PAPEL")
+		Escribir("3. VIDRIO")
+		Escribir("4. ALUMINIO")
+		Escribir("Tipo material: ")
+		Leer(tipoMaterial)
+		
+		Si(tipoMaterial == 1 || tipoMaterial == 2 || tipoMaterial == 3 || tipoMaterial == 4)
+			
+		entonces Escribir("***Tipo de maerial NO VALIDO, ingrese una opcion de material correcta")
+	
+	
+	Mientras(verdadero)
+		Escribir("Ingrese la cantidad de material en kilogramos que va a ingresar:")
+		Escribir("Cantidad: ")
+		Leer(cantMaterial)
+				
+		Si(cantMaterial>0)
+			break;
+	Entonces Escribir("***Cantidad NO VALIDO, ingrese cantidad mayor a 0 ")
+	
+	Segun tipoMaterial Hacer
+		caso 1: puntosMaterial=2;
+				contPlastico=contPlastico+cantMaterial
+				puntosTotalPlastico=contPlastico*puntosMaterial
+		caso 2: puntosMaterial=4
+				contPapel=contPapel+cantMaterial
+				puntosTotalPapel=contPapel*puntosMaterial
+		caso 3: puntosMaterial=6
+				contVidrio=contVidrio+cantMaterial
+				puntosTotalVidrio=contVidrio*puntosMaterial
+		caso 4: puntosMaterial=10
+				contAluminio=contAluminio+cantMaterial
+				puntosTotalAluminio=contAluminio*puntosMaterial
+				
+	}
+	
+	cantTotalMaterial=contPlastico+contPapel+contVidrio+contAluminio
+	puntosTotales=puntosTotalPlastico+puntosTotalPapel+puntosTotalVidrio+puntosTotalAluminio		
+	printf("\nDesea ingresar otro material para reciclar? (S / N):")
+        
+	Leer(opcion);
+        
+	}Mientras (opcion == 's' || opcion == 'S');	
+
+
+
+Escribir("EL VALOR EN PUNTOS POR KILOGRAMO DE LOS MATERIALES RECICLADOS ES EL SIGUIENTE:")
+
+Escribir("-PLASTICO 2 PTS")
+Escribir("-PAPEL 4 PTS")
+Escribir("-VIDRIO 6 PTS")
+Escribir("-ALUMINIO 10 PTS")
+
+
+
+	Segun escuela Hacer
+		caso 1: Escribir("-------------   Escuela Marcelino Garcia Flamenco  --------------")
+		caso 2: Escribir("-------------   Escuela Republica de Nicaragua   --------------")
+		caso 3: Escribir("-------------   Escuela Omar Dengo   --------------")
+		caso 4: Escribir("-------------   Escuela Carolina Dent   --------------")
+	
+	
+Escribir("La cantidad de plastico recolectado es de:"+ contPlastico)
+Escribir(" Kg")
+Escribir("La cantidad de papel recolectado es de:" + contPapel)
+Escribir(" Kg")
+Escribir("La cantidad de vidrio recolectado es de:" + contVidrio)
+Escribir(" Kg")
+Escribir("La cantidad de aluminio recolectado es de:" + contAluminio);
+Escribir(" Kg")
+Escribir("La cantidad total de material reclicado es de:" + cantTotalMaterial);
+Escribir(" Kg")
+
+Escribir("Total del puntos obtenidos por plastico recolectado es de:" + puntosTotalPlastico)
+Escribir("Total del puntos obtenidos por papel recolectado  es  de :" + puntosTotalPapel)
+Escribir("Total del puntos obtenidos por vidrio  recolectado es de :" + puntosTotalVidrio)
+Escribir("Total del puntos obtenidos por aluminio recolectado es de:" + puntosTotalAluminio)
+Escribir("La totalidad de puntos obtenidos es de:"+ puntosTotales)
+Escribir(" pts")
+
+
+
+Si (puntosTotales>=100 && puntosTotales<500)
+	Escribir("Su escuela ha ganado 100.000 colones canjeables en materiales de ferreteria para restaurar las aulas.")
+Entonoces
+	si (puntosTotales>=500 && puntosTotales<800)
+	Escribir("Su escuela ha ganado 150.000 colones canjeables en materiales de ferreteria para restaurar las aulas.")
+Entonoces
+	Si (puntosTotales>=800 && puntosTotales<1000)
+	Escribir("Su escuela ha ganado 250.000 colones canjeables en materiales de ferreteria para restaurar las aulas.")
+Entonoces
+	Si (puntosTotales>=1000 && puntosTotales<50000)
+	Escribir("Su escuela ha ganado 300.000 colones canjeables en materiales de ferreteria para restaurar las aulas.")
+Entonoces
+	Si (puntosTotales<100)
+	Escribir("Gracias por el esfuerzo de su grupo, SIGAN RECICLANDO, pasen a la mesa de premios de consolacion.")
+
+Fin

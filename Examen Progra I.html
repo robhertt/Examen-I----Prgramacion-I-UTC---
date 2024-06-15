@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Examen Progra I.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="SynEdit HTML exporter" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+.cpp1-assembler { color: #0000FF; }
+.cpp1-character { color: #000000; }
+.cpp1-comment { color: #0078D7; font-style: italic; }
+.cpp1-float { color: #800080; }
+.cpp1-hexadecimal { color: #800080; }
+.cpp1-identifier { color: #000000; }
+.cpp1-illegalchar { color: #000000; }
+.cpp1-number { color: #800080; }
+.cpp1-octal { color: #800080; }
+.cpp1-preprocessor { color: #008000; }
+.cpp1-reservedword { color: #000000; font-weight: bold; }
+.cpp1-space { background-color: #FFFFFF; color: #000000; }
+.cpp1-string { color: #0000FF; font-weight: bold; }
+.cpp1-symbol { color: #FF0000; font-weight: bold; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<code><span style="font: 10pt Consolas;"><span class="cpp1-preprocessor">#include &lt;iostream&gt;
+#include &lt;conio.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;cctype&gt;
+
+
+</span><span class="cpp1-comment">/* run this program using the console pauser or add your own getch, system(&quot;pause&quot;) or input loop */
+
+</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> main</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> argc</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-reservedword">char</span><span class="cpp1-symbol">**</span><span class="cpp1-space"> argv</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	
+	</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> escuela</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> tipoMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">puntosMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">int</span><span class="cpp1-space"> tipoEscuela</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">double</span><span class="cpp1-space"> cantMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">double</span><span class="cpp1-space"> contPlastico</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">contPapel</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> contVidrio</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">contAluminio</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">double</span><span class="cpp1-space"> cantTotalMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">double</span><span class="cpp1-space"> puntosTotalPlastico</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">puntosTotalPapel</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">puntosTotalVidrio</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">puntosTotalAluminio</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> puntosTotales</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> premioFinal</span><span class="cpp1-symbol">=</span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">char</span><span class="cpp1-space"> opcion</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">	
+	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;*******************************************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Bienvenido al concruso anual de reciclaje UTC Escuelas Distrito SAN JOSE&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;********************************************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;ESTE 2024 TU ESCUELA GANARSE HASTA 300.000 MIL COLONES EN MATERIALES PARA RESTURAR LAS AULAS\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;********************************************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;PATROCINADOR UTC - NATURALIZA - &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;********************************************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Aca te dejamos un manual en caso de que aun no sepas como empezar a reciclar https://n9.cl/iq7c4\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;********************************************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Esta es la lista de escuelas que pertenecen al Distrito SAN JOSE\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Por favor escoga el numero correspondiente a la escuela que desea ingresar:\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		
+			</span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">true</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;1. Escuela Marcelino Garcia Flamenco\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;2. Escuela Republica de Nicaragua\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;3. Escuela Omar Dengo\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;4. Escuela Carolina Dent\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Escuela: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">escuela</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			getchar</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">escuela </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-space"> </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> escuela </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-space"> </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> escuela </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-space"> </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> escuela </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">				</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;***Escuela no encontrada, por favor digite una escuela valida \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	
+	</span><span class="cpp1-reservedword">do</span><span class="cpp1-symbol">{</span><span class="cpp1-space">	
+		</span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">true</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Por favor escoga el tipo de material que va a reciclar:\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;1. PLASTICO\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;2. PAPEL\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;3. VIDRIO\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;4. ALUMINIO\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Tipo material: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%d&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">tipoMaterial</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			getchar</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">tipoMaterial </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-space"> </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> tipoMaterial </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-space"> </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> tipoMaterial </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-space"> </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> tipoMaterial </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">				</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;***Tipo de maerial NO VALIDO, ingrese una opcion de material correcta\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">		
+		</span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-reservedword">true</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Ingrese la cantidad de material en kilogramos que va a ingresar:\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Cantidad: &quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%lf&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">cantMaterial</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			</span><span class="cpp1-comment">//cantMaterial+cantMaterial;
+</span><span class="cpp1-space">			getchar</span><span class="cpp1-symbol">();
+</span><span class="cpp1-space">			printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">if</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">cantMaterial</span><span class="cpp1-symbol">&gt;</span><span class="cpp1-number">0</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">				</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;***Cantidad NO VALIDO, ingrese cantidad mayor a 0 \n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">		</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">		</span><span class="cpp1-reservedword">switch</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">tipoMaterial</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> puntosMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">2</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					contPlastico</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contPlastico</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">cantMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					puntosTotalPlastico</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contPlastico</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">puntosMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> puntosMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">4</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					contPapel</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contPapel</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">cantMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					puntosTotalPapel</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contPapel</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">puntosMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> puntosMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">6</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					contVidrio</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contVidrio</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">cantMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					puntosTotalVidrio</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contVidrio</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">puntosMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> puntosMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-number">10</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					contAluminio</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contAluminio</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">cantMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					puntosTotalAluminio</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contAluminio</span><span class="cpp1-symbol">*</span><span class="cpp1-identifier">puntosMaterial</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">		cantTotalMaterial</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">contPlastico</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">contPapel</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">contVidrio</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">contAluminio</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">		puntosTotales</span><span class="cpp1-symbol">=</span><span class="cpp1-identifier">puntosTotalPlastico</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">puntosTotalPapel</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">puntosTotalVidrio</span><span class="cpp1-symbol">+</span><span class="cpp1-identifier">puntosTotalAluminio</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			
+		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\nDesea ingresar otro material para reciclar? (S / N):\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">        printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">        scanf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;%c&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;</span><span class="cpp1-identifier">opcion</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">        printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">while</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">opcion </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> 's' </span><span class="cpp1-symbol">||</span><span class="cpp1-space"> opcion </span><span class="cpp1-symbol">==</span><span class="cpp1-space"> 'S'</span><span class="cpp1-symbol">);</span><span class="cpp1-space">	
+	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;EL VALOR EN PUNTOS POR KILOGRAMO DE LOS MATERIALES RECICLADOS ES EL SIGUIENTE:&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;-PLASTICO 2 PTS/KG\n-PAPEL 4 PTS/KG\n-VIDRIO 6 PTS/KG\n-ALUMINIO 10 PTS/KG\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">switch</span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">escuela</span><span class="cpp1-symbol">){
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">1</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;-------------   Escuela Marcelino Garcia Flamenco  --------------&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">2</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;-------------   Escuela Republica de Nicaragua   --------------&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">3</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;-------------   Escuela Omar Dengo   --------------&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">			</span><span class="cpp1-reservedword">case</span><span class="cpp1-space"> </span><span class="cpp1-number">4</span><span class="cpp1-symbol">:</span><span class="cpp1-space"> printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;-------------   Escuela Carolina Dent   --------------&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">					</span><span class="cpp1-reservedword">break</span><span class="cpp1-symbol">;
+</span><span class="cpp1-space">					
+		</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;La cantidad de plastico recolectado es de: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">contPlastico</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; Kg\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;La cantidad de papel recolectado es de: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">contPapel</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; Kg\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;La cantidad de vidrio recolectado es de: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">contVidrio</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; Kg\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;La cantidad de aluminio recolectado es de: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">contAluminio</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; Kg\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);</span><span class="cpp1-space">	
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;La cantidad total de material reclicado es de: %.2f&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-identifier">cantTotalMaterial</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; Kg\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Total del puntos obtenidos por plastico recolectado es de: %.2lf \n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> puntosTotalPlastico</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Total del puntos obtenidos por papel recolectado  es  de : %.2lf \n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space">   puntosTotalPapel</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Total del puntos obtenidos por vidrio  recolectado es de : %.2lf \n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space">   puntosTotalVidrio</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Total del puntos obtenidos por aluminio recolectado es de: %.2lf \n&quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> puntosTotalAluminio</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;La totalidad de puntos obtenidos es de: %.2lf &quot;</span><span class="cpp1-symbol">,</span><span class="cpp1-space"> puntosTotales</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot; pts\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;******************************************************************\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">puntosTotales</span><span class="cpp1-symbol">&gt;=</span><span class="cpp1-number">100</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-space"> puntosTotales</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">500</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Su escuela ha ganado 100.000 colones canjeables en materiales de ferreteria para restaurar las aulas.&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">puntosTotales</span><span class="cpp1-symbol">&gt;=</span><span class="cpp1-number">500</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-space"> puntosTotales</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">800</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Su escuela ha ganado 150.000 colones canjeables en materiales de ferreteria para restaurar las aulas.&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">puntosTotales</span><span class="cpp1-symbol">&gt;=</span><span class="cpp1-number">800</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-space"> puntosTotales</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">1000</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Su escuela ha ganado 250.000 colones canjeables en materiales de ferreteria para restaurar las aulas.&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">puntosTotales</span><span class="cpp1-symbol">&gt;=</span><span class="cpp1-number">1000</span><span class="cpp1-space"> </span><span class="cpp1-symbol">&amp;&amp;</span><span class="cpp1-space"> puntosTotales</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">50000</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Su escuela ha ganado 300.000 colones canjeables en materiales de ferreteria para restaurar las aulas.&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		</span><span class="cpp1-reservedword">if</span><span class="cpp1-space"> </span><span class="cpp1-symbol">(</span><span class="cpp1-identifier">puntosTotales</span><span class="cpp1-symbol">&lt;</span><span class="cpp1-number">100</span><span class="cpp1-symbol">)</span><span class="cpp1-space"> </span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">		printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;Gracias por el esfuerzo de su grupo, SIGAN RECICLANDO, pasen a la mesa de premios de consolacion&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-reservedword">else</span><span class="cpp1-symbol">{
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}
+</span><span class="cpp1-space">	</span><span class="cpp1-symbol">}</span><span class="cpp1-space">				
+
+	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	printf</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;\n&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	system</span><span class="cpp1-symbol">(</span><span class="cpp1-string">&quot;pause&quot;</span><span class="cpp1-symbol">);
+</span><span class="cpp1-space">	</span><span class="cpp1-reservedword">return</span><span class="cpp1-space"> </span><span class="cpp1-number">0</span><span class="cpp1-symbol">;
+}
+</span></span>
+</code></pre>
+</body>
+</html>
